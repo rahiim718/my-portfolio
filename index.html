@@ -94,10 +94,10 @@
       .tag-list { display: flex; flex-wrap: wrap; gap: 9px; }
       .tag { padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.025); font-size: .8rem; }
 
-      .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+      .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 280px)); justify-content: center; gap: 22px; }
       .project-card { overflow: hidden; transition: transform 180ms ease, border-color 180ms ease; }
       .project-card:hover { transform: translateY(-6px); border-color: rgba(53,208,216,.38); }
-      .project-image { overflow: hidden; aspect-ratio: 16 / 7; background: #091523; }
+      .project-image { overflow: hidden; height: 150px; background: #091523; }
       .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 300ms ease; }
       .project-card:hover .project-image img { transform: scale(1.035); }
       .project-content { padding: 26px; }
@@ -121,7 +121,8 @@
         .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 72px; }
         .portrait-wrap { width: min(480px, 92%); margin-inline: auto; }
         .section-heading, .about-grid, .contact-card { grid-template-columns: 1fr; }
-        .skills, .project-grid { grid-template-columns: repeat(2, 1fr); }
+        .skills { grid-template-columns: repeat(2, 1fr); }
+        .project-grid { grid-template-columns: repeat(2, minmax(0, 280px)); }
       }
       @media (max-width: 640px) {
         .container { width: min(100% - 28px, 1120px); }
@@ -131,7 +132,8 @@
         .hero { gap: 54px; padding-bottom: 80px; }
         section { padding: 78px 0; }
         .section-heading { gap: 18px; }
-        .focus-list, .skills, .project-grid { grid-template-columns: 1fr; }
+        .focus-list, .skills { grid-template-columns: 1fr; }
+        .project-grid { grid-template-columns: minmax(0, 280px); }
         .project-content p { min-height: auto; }
         .contact-card { padding: 30px 24px; }
         .status { right: -8px; }
